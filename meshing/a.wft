@@ -1,0 +1,958 @@
+{
+    "workflow": {
+        "version": "26.1",
+        "ROOT": {
+            "TaskObject:TaskObject1": {
+                "Arguments": {
+                    "FileName": "d:\\Python\\Mixing_automation\\nadoba_design\\nadoba_out\\Nadoba.pmdb",
+                    "LengthUnit": "mm",
+                    "NumParts": "1"
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "ImportGeometry",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Import Geometry"
+            },
+            "TaskObject:TaskObject2": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "buffer_4_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "buffer_4"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "12.9"
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": [
+                    "TaskObject12",
+                    "TaskObject13",
+                    "TaskObject14",
+                    "TaskObject15",
+                    "TaskObject16",
+                    "TaskObject17",
+                    "TaskObject18",
+                    "TaskObject19",
+                    "TaskObject20"
+                ],
+                "TaskType": "Compound",
+                "Warnings": "__________None",
+                "_name_": "Add Local Sizing"
+            },
+            "TaskObject:TaskObject3": {
+                "Arguments": {
+                    "CFDSurfaceMeshControls": {
+                        "CellsPerGap": "1",
+                        "CurvatureNormalAngle": "18",
+                        "GrowthRate": "1.2",
+                        "MaxSize": "167.69999999999999",
+                        "MinSize": "16.77"
+                    },
+                    "ExecuteShareTopology": "No",
+                    "OriginalZones": [
+                        "mrf_fluid-stationary_fluid",
+                        "impeller_wall",
+                        "shaft_lower",
+                        "shaft_upper",
+                        "buffer_1",
+                        "buffer_2",
+                        "buffer_3",
+                        "buffer_4",
+                        "tank_walls",
+                        "tank_bottom",
+                        "free_surface"
+                    ]
+                },
+                "CheckPoint": "default-on",
+                "CommandName": "GenerateTheSurfaceMeshWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Generate the Surface Mesh"
+            },
+            "TaskObject:TaskObject4": {
+                "Arguments": {
+                    "InvokeShareTopology": "Yes",
+                    "NonConformal": "No",
+                    "SetupType": "The geometry consists of only fluid regions with no voids",
+                    "WallToInternal": "Yes"
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "GeometrySetup",
+                "Errors": "__________None",
+                "InactiveTaskList": [
+                    "TaskObject6",
+                    "TaskObject8"
+                ],
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": [
+                    "TaskObject5",
+                    "TaskObject7"
+                ],
+                "TaskType": "Conditional",
+                "Warnings": "__________None",
+                "_name_": "Describe Geometry"
+            },
+            "TaskObject:TaskObject5": {
+                "Arguments": {
+                    "InterfaceSelect": "Manual"
+                },
+                "CheckPoint": "default-on",
+                "CommandName": "ShareTopology",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Apply Share Topology"
+            },
+            "TaskObject:TaskObject6": {
+                "Arguments": "",
+                "CheckPoint": "default-off",
+                "CommandName": "Capping",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound",
+                "Warnings": "__________None",
+                "_name_": "Enclose Fluid Regions (Capping)"
+            },
+            "TaskObject:TaskObject7": {
+                "Arguments": {
+                    "BoundaryLabelList": [
+                        "free_surface"
+                    ],
+                    "BoundaryLabelTypeList": [
+                        "symmetry"
+                    ],
+                    "OldBoundaryLabelList": [
+                        "free_surface"
+                    ],
+                    "OldBoundaryLabelTypeList": [
+                        "wall"
+                    ],
+                    "OldLabelZoneList": [
+                        "free_surface"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "UpdateBoundaries",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Update Boundaries"
+            },
+            "TaskObject:TaskObject8": {
+                "Arguments": "",
+                "CheckPoint": "default-on",
+                "CommandName": "CreateRegions",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Create Regions"
+            },
+            "TaskObject:TaskObject9": {
+                "Arguments": "__________None",
+                "CheckPoint": "default-off",
+                "CommandName": "UpdateRegions",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Update Regions"
+            },
+            "TaskObject:TaskObject10": {
+                "Arguments": {
+                    "BLControlName": "buffer_4_bl"
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": [
+                    "TaskObject21",
+                    "TaskObject22",
+                    "TaskObject23",
+                    "TaskObject24",
+                    "TaskObject25",
+                    "TaskObject26",
+                    "TaskObject27",
+                    "TaskObject28",
+                    "TaskObject29"
+                ],
+                "TaskType": "Compound",
+                "Warnings": "__________None",
+                "_name_": "Add Boundary Layers"
+            },
+            "TaskObject:TaskObject11": {
+                "Arguments": {
+                    "MeshSolidRegions": "false",
+                    "VolumeFill": "poly-hexcore",
+                    "VolumeFillControls": {
+                        "HexMaxSize": "41.280000000000001"
+                    }
+                },
+                "CheckPoint": "default-on",
+                "CommandName": "GenerateTheVolumeMeshWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Simple",
+                "Warnings": "__________None",
+                "_name_": "Generate the Volume Mesh"
+            },
+            "TaskObject:TaskObject12": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "impeller_wall_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "impeller_wall"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "2.5800000000000001",
+                    "CompleteFaceLabelList": [
+                        "impeller_wall"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "impeller_wall_size"
+            },
+            "TaskObject:TaskObject13": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "shaft_lower_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "shaft_lower"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "6.7080000000000002",
+                    "CompleteFaceLabelList": [
+                        "shaft_lower"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "shaft_lower_size"
+            },
+            "TaskObject:TaskObject14": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "shaft_upper_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "shaft_upper"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "13.975",
+                    "CompleteFaceLabelList": [
+                        "shaft_upper"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "shaft_upper_size"
+            },
+            "TaskObject:TaskObject15": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "tank_walls_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "tank_walls"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "41.924999999999997",
+                    "CompleteFaceLabelList": [
+                        "tank_walls"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "tank_walls_size"
+            },
+            "TaskObject:TaskObject16": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "tank_bottom_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "tank_bottom"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "41.924999999999997",
+                    "CompleteFaceLabelList": [
+                        "tank_bottom"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "tank_bottom_size"
+            },
+            "TaskObject:TaskObject17": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "buffer_1_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "buffer_1"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "12.9",
+                    "CompleteFaceLabelList": [
+                        "buffer_1"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_1_size"
+            },
+            "TaskObject:TaskObject18": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "buffer_2_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "buffer_2"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "12.9",
+                    "CompleteFaceLabelList": [
+                        "buffer_2"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_2_size"
+            },
+            "TaskObject:TaskObject19": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "buffer_3_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "buffer_3"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "12.9",
+                    "CompleteFaceLabelList": [
+                        "buffer_3"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_3_size"
+            },
+            "TaskObject:TaskObject20": {
+                "Arguments": {
+                    "AddChild": "yes",
+                    "BOIControlName": "buffer_4_size",
+                    "BOIExecution": "Face Size",
+                    "BOIFaceLabelList": [
+                        "buffer_4"
+                    ],
+                    "BOIGrowthRate": "1.2",
+                    "BOISize": "12.9",
+                    "CompleteFaceLabelList": [
+                        "buffer_4"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddLocalSizingWTM",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_4_size"
+            },
+            "TaskObject:TaskObject21": {
+                "Arguments": {
+                    "BLControlName": "impeller_wall_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "impeller_wall"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "impeller_wall"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "13",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "5",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "impeller_wall"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "impeller_wall_bl"
+            },
+            "TaskObject:TaskObject22": {
+                "Arguments": {
+                    "BLControlName": "shaft_lower_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "shaft_lower"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "shaft_lower"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "20",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "5",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "shaft_lower"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "shaft_lower_bl"
+            },
+            "TaskObject:TaskObject23": {
+                "Arguments": {
+                    "BLControlName": "shaft_upper_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "shaft_upper"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "shaft_upper"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "25",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "5",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "shaft_upper"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "shaft_upper_bl"
+            },
+            "TaskObject:TaskObject24": {
+                "Arguments": {
+                    "BLControlName": "tank_walls_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "tank_walls"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "tank_walls"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "35",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "3",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "tank_walls"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "tank_walls_bl"
+            },
+            "TaskObject:TaskObject25": {
+                "Arguments": {
+                    "BLControlName": "tank_bottom_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "tank_bottom"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "tank_bottom"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "35",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "3",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "tank_bottom"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "tank_bottom_bl"
+            },
+            "TaskObject:TaskObject26": {
+                "Arguments": {
+                    "BLControlName": "buffer_1_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "buffer_1"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "buffer_1"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "35",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "3",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "buffer_1"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_1_bl"
+            },
+            "TaskObject:TaskObject27": {
+                "Arguments": {
+                    "BLControlName": "buffer_2_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "buffer_2"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "buffer_2"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "35",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "3",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "buffer_2"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_2_bl"
+            },
+            "TaskObject:TaskObject28": {
+                "Arguments": {
+                    "BLControlName": "buffer_3_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "buffer_3"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "buffer_3"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "35",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "3",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "buffer_3"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_3_bl"
+            },
+            "TaskObject:TaskObject29": {
+                "Arguments": {
+                    "BLControlName": "buffer_4_bl",
+                    "BLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "BLZoneList": [
+                        "buffer_4"
+                    ],
+                    "CompleteBLRegionList": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "CompleteBLZoneList": [
+                        "buffer_4"
+                    ],
+                    "CompleteRegionScope": [
+                        "mrf_fluid",
+                        "stationary_fluid"
+                    ],
+                    "FaceScope": {
+                        "GrowOn": "selected-zones",
+                        "RegionsType": "fluid-regions"
+                    },
+                    "FirstAspectRatio": "35",
+                    "LocalPrismPreferences": {
+                        "Continuous": "Continuous"
+                    },
+                    "NumberOfLayers": "3",
+                    "OffsetMethodType": "aspect-ratio",
+                    "Rate": "1.2",
+                    "ZoneSelectionList": [
+                        "buffer_4"
+                    ]
+                },
+                "CheckPoint": "default-off",
+                "CommandName": "AddBoundaryLayers",
+                "Errors": "__________None",
+                "InactiveTaskList": "__________None",
+                "ObjectPath": "",
+                "State": "Out-of-date",
+                "TaskList": "__________None",
+                "TaskType": "Compound Child",
+                "Warnings": "__________None",
+                "_name_": "buffer_4_bl"
+            },
+            "Workflow": {
+                "CurrentTask": "TaskObject11",
+                "TaskList": [
+                    "TaskObject1",
+                    "TaskObject2",
+                    "TaskObject3",
+                    "TaskObject4",
+                    "TaskObject9",
+                    "TaskObject10",
+                    "TaskObject11"
+                ],
+                "WorkflowType": "Watertight Geometry"
+            }
+        }
+    },
+    "meshing": {
+        "version": "26.1",
+        "ROOT": {
+            "GlobalSettings": {
+                "AreaUnit": "mm^2",
+                "CurrentTask": "",
+                "EnableCleanCAD": "true",
+                "EnableComplexMeshing": "false",
+                "EnableOversetMeshing": "false",
+                "EnablePrime2dMeshing": "false",
+                "EnablePrimeMeshing": "false",
+                "InitialVersion": "26.1",
+                "LengthUnit": "mm",
+                "NormalMode": "false",
+                "OldSize": "0",
+                "UTLEnabled": "false",
+                "UseAllowedValues": "true",
+                "VolumeUnit": "mm^3",
+                "FTMRegionData": {
+                    "AllOversetNameList": "__________None",
+                    "AllOversetSizeList": "__________None",
+                    "AllOversetTypeList": "__________None",
+                    "AllOversetVolumeFillList": "__________None",
+                    "AllRegionFilterCategories": "__________None",
+                    "AllRegionLeakageSizeList": "__________None",
+                    "AllRegionLinkedConstructionSurfaceList": "__________None",
+                    "AllRegionMeshMethodList": "__________None",
+                    "AllRegionNameList": "__________None",
+                    "AllRegionOversetComponenList": "__________None",
+                    "AllRegionSizeList": "__________None",
+                    "AllRegionSourceList": "__________None",
+                    "AllRegionTypeList": "__________None",
+                    "AllRegionVolumeFillList": "__________None"
+                }
+            },
+            "Graphics": {
+                "Bounds": {
+                    "BoundX": "false",
+                    "BoundY": "false",
+                    "BoundZ": "false",
+                    "DeltaValue": "0",
+                    "Selection": ""
+                }
+            }
+        }
+    },
+    "PartManagement": {
+        "version": "26.1",
+        "ROOT": {
+            "Node:Node1": {
+                "Name": "Meshing Model",
+                "_name_": "Meshing Model"
+            }
+        }
+    }
+}
